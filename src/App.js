@@ -1,11 +1,12 @@
+import Weather from "./components/weather";
 
 
 function App() {
   
   return (
-    <div >
-   <h1>Hello react</h1>
-    </div>
+    <>
+    <Weather></Weather>
+    </>
   );
 }
 

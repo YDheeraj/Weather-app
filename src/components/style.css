@@ -1,0 +1,161 @@
+@import url(https://fonts.googleapis.com/css?family=Poiret+One);
+
+@import url(https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css);
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    background-color:rgb(73, 73, 78);
+}
+
+.wrap{
+    position: absolute;
+    display: flex;
+    border-radius: 0.5rem;
+    left: 50%;
+    top: 7rem;
+    transform: translateX(-50%);
+    
+}
+
+.search{
+    width: 80%;
+}
+
+.search input{
+    font-size: 1.6rem;
+    border: none;
+    border-radius:  0.5rem 0rem 0rem 0.5rem ;
+    padding: 1rem 2.5rem;
+    padding-left: 1rem;
+}
+
+.search input:focus{
+    outline: none;
+}
+
+.btn{
+    padding: 1rem 2.5rem;
+    color: white;
+    border: none;
+    background-color: rgb(0, 152, 199);
+    border-radius: 0rem 0.5rem 0.5rem 0rem;
+}
+
+.btn:hover{
+    padding: 1rem 2.5rem;
+    font-weight: bolder;
+    color: white;
+    border: 2px solid black;
+    background-color: rgb(0, 31, 41);
+    border-radius: 0rem 0.5rem 0.5rem 0rem;
+}
+
+.widget{
+    position: absolute;
+    background-color: black;
+    border-radius: 2rem;
+    left: 50%;
+    top: 15rem;
+    transform: translateX(-50%);
+    width: 60rem;
+    height: 35rem;
+}
+
+.wheather-icon{
+    width: 100%;
+    height: 50%;
+    background-color: white;
+    border: none;
+    border-radius: 2rem 2rem 0rem 0rem;
+    font-size: 100px;
+    font-family: weathericons;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.weather-info{
+    display: flex;
+    width: 100%;
+    height: 37.5%;
+    color: white;
+    background-color: rgb(0, 0, 0);
+    border: none;
+   
+}
+
+.temp{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 35%;
+    color: white;
+    font-size: 6.5rem;
+    padding: 0 0 0 1rem;
+}
+
+.description{
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.weather-condition{
+    text-transform: uppercase;
+  font-size: 3.5rem;
+  font-weight: 100;
+}
+
+.place{
+    color: white;
+    font-size: 1.5rem;
+}
+
+.date{
+    background-color:#51a2c2;
+    color: white;
+    font-size: 3rem;
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: 800;
+    padding: 0 0.5rem;
+}
+
+.extra-info{
+    background-color: white;
+    color:#70c1b3;
+    width: 100%;
+    height: 26%;
+    border-radius: 0rem 0rem 2rem 2rem;
+    font-size: 2.5rem;
+    padding: 5% 0;
+}
+
+.extra-info-minmax{
+    display: flex;
+    justify-content: space-around;
+}
+
+.two-sided{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-txt{
+    font-size: 1.6rem;
+    padding: 0 1.5rem;
+    color: black;
+}
