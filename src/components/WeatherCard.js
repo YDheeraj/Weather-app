@@ -1,42 +1,61 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, {useEffect, useState } from "react";
+import fog from '../images/mist.jpg';
+import sunny from '../images/sunny.jpg';
+import mist from '../images/mist.jpg';
+import rain from '../images/rain1.jpg';
+import snow from '../images/snow.jpg';
+import cloud from '../images/cloudy.jpg';
 
-const WeatherCard=({weatherData})=>{
+
+
+
+const WeatherCard=({weatherData,getimg})=>{
+    
+
     const {temp,humidity,pressure,weathermood,name,speed,country,sunset}=weatherData;
     const [mood,setMood]=useState("");
+
+    
+   
+
 
     let sec=sunset;
     let date=new Date(sec*1000);
 
     let timestr=`${date.getHours()}:${date.getMinutes()}`;
+
+   
     
     useEffect(()=>{
         if(weathermood){
             switch (weathermood) {
                 case "Clouds":
                     setMood("wi-day-cloudy");
-  
+                    getimg(cloud)
                     break;
                 case "Haze":
                     setMood("wi-fog");
+                    getimg(fog)
                     break;
                 case "Clear":
                     setMood("wi-day-sunny");
-  
+                    getimg(sunny)
                     break;
                 case "Mist":
                     setMood("wi-dust");
-
+                    getimg(mist)
                     break;
                 case "Snow":
                     setMood("wi-snow");
+                    getimg(snow)
                     break;
                 case "Rain":
                     setMood("wi-rain");
-
+                    getimg(rain)
                     break; 
                 default:
                     setMood("wi-day-sunny");
-  
+                    getimg(sunny)
                     break;
             }
         }
@@ -51,9 +70,6 @@ return(
              <i className={`wi ${mood}`}></i>
            </div>
            <div className="weather-info">
-            {/* <div className="div-for-back">
-              <img src={image} alt="img"></img>
-            </div> */}
             <div className="temp">
                 <span>{temp}&deg;</span>
             </div>
