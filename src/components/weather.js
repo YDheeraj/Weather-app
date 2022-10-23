@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState,useCallback } from "react";
 import "./style.css";
 import WeatherCard from "./WeatherCard";
 
@@ -7,7 +7,8 @@ const Weather = () => {
   const [inputdata, setinputdata] = useState("Meerut");
   const [weatherData, setweatherData] = useState({});
 
-  const getweatherInfo = async () => {
+
+  const getweatherInfo = useCallback(async () => {
     try {
       let url = `https://api.openweathermap.org/data/2.5/weather?q=${inputdata}&units=metric&appid=6ac0a8651fbc75df440e0bc170071a1e`;
 
@@ -34,11 +35,11 @@ const Weather = () => {
     } catch (error) {
       console.log(error);
     }
-  };
+  },[inputdata])
 
   useEffect(() => {
     getweatherInfo();
-  },[]);
+  },[getweatherInfo]);
 
   const handle = (e) => {
     if (e.key === "Enter") {

@@ -60,7 +60,7 @@ const WeatherCard=({weatherData,getimg})=>{
             }
         }
 
-    },[weathermood]);
+    },[weathermood,getimg]);
 
 
 return(
